@@ -51,20 +51,21 @@ public class Arrays {
 
         // 1. Declara un array de tipo int llamado maxTemperaturas que tiene 7 elementos
         //    Cada elemento se corresponde con un día de la semana: Lunes, ... Domingo
-           int[] maxTemperaturas = new int[7];
-                maxTemperaturas[0] = 22;
-                maxTemperaturas[1] = 23;
-                maxTemperaturas[2] = 24;
-                maxTemperaturas[3] = 24;
-                maxTemperaturas[4] = 23;
-                maxTemperaturas[5] = 21;
-                maxTemperaturas[6] = 20;
+          String [] dias = {"Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"}; /*profe, averigüe que usando las "{}"
+           tambien se pueden asignara los valores de manera directa*/
+                      
+                   
         // 2. Los valores son: 22, 23, 24, 24 , 23, 21, 20
-
+         int[] maxTemperaturas = {22,23,24,24,23,21,20};
+               
         // 3. Llama a la función mostrarTemperaturas
-        System.out.println(maxTemperaturas[0]);
-        System.out.println(maxTemperaturas[1]);
-        System.out.println(maxTemperaturas[2]);
+        System.out.println( dias[0] + ": " + maxTemperaturas[0] + "°");
+        System.out.println( dias[1] + ": " + maxTemperaturas[1] + "°");
+        System.out.println(dias[2] + ": " + maxTemperaturas[2] + "°");
+        System.out.println(dias[3] + ": " + maxTemperaturas[3] + "°");
+        System.out.println(dias[4] + ": " + maxTemperaturas[4] + "°");
+        System.out.println(dias[5] + ": " + maxTemperaturas[5] + "°");
+        System.out.println(dias[6] + ": " + maxTemperaturas[6] + "°");
 
     }
 }
