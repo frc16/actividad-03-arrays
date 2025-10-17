@@ -70,3 +70,18 @@ public class Arrays {
 
     }
 }
+
+/* Producto[] carrito = {
+new Prodcuto("teclado", 24.50),
+new Producto("raton", 10.10),
+new Producto("teclado", 16.70),
+};
+
+public static double totalCarrito(Producto[] carrito){
+double total = 0;
+for (int i = 0; < carrito.length;i++){
+     Producto p = carrito[i];
+     total += p.getPrecio();
+}
+     return total;
+}*/
