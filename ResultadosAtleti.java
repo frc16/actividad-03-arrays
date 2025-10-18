@@ -78,7 +78,14 @@ public class ResultadosAtleti {
         // 2. Recorre el array desde el índice 1.
         // 3. Si temporada[i].getGolesMarcados() > mejor.getGolesMarcados(), actualiza mejor.
         // 4. Devuelve mejor.
-        return null;
+        int mejorPartido = temporada[0];
+
+        for (int i=1;i<temporada.length;i++) {
+            partido a = temporada[i].getGolesMarcados() > mejor.getGolesMarcados;
+            mejorPartido = a;
+            
+        }
+        return mejorPartido;
     }
 
     /**
@@ -93,7 +100,13 @@ public class ResultadosAtleti {
         // 2. Recorre el array desde el índice 1.
         // 3. Si temporada[i].getGolesMarcados() < peor.getGolesMarcados(), actualiza peor.
         // 4. Devuelve peor.
-        return null;
+        int peorPartido = temporada[0];
+
+        for(int i=1;i<temporada.length;i++){
+            partido b= temporada[i] < peor.getGolesMarcados();
+            peorPartido= b;
+        }
+        return peorPartido;
     }
 
     // ---------------------------------------------------------------------
@@ -106,7 +119,13 @@ public class ResultadosAtleti {
     public static int totalGolesMarcados(Partido[] temporada) {
         // TODO (opcional):
         // 1. Acumula getGolesMarcados() en un int y devuelve.
-        return 0;
+        
+        int suma =0;
+
+        for(int i=0;i<temporada.length;i++);
+        int total = getGolesMarcados();
+         suma += suma + total;
+        return suma;
     }
 
     /**
@@ -115,7 +134,14 @@ public class ResultadosAtleti {
     public static int totalGolesRecibidos(Partido[] temporada) {
         // TODO (opcional):
         // 1. Acumula getGolesRecibidos() en un int y devuelve.
-        return 0;
+        int suma = 0;
+
+        for (int i=0;i<temporada.length; i++) {
+            int total = getGolesRecibidos();
+            suma += suma + total;
+            
+        }
+        return suma;
     }
 
     // ---------------------------------------------------------------------
