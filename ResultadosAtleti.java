@@ -53,7 +53,7 @@ public class ResultadosAtleti {
         // 1. Inicializa una variable suma a 0.
         // 2. Recorre el array con un for-each y suma getGolesMarcados().
         // 3. Devuelve suma / temporada.length (como double).
-        double suma = 0;
+        int suma = 0;
 
         for (int a = 0; a < temporada.length; a++) {
             Partido t = temporada[a]; 
@@ -78,14 +78,15 @@ public class ResultadosAtleti {
         // 2. Recorre el array desde el índice 1.
         // 3. Si temporada[i].getGolesMarcados() > mejor.getGolesMarcados(), actualiza mejor.
         // 4. Devuelve mejor.
-        int mejorPartido = temporada[0];
+         Partido mejor = temporada[0];
 
-        for (int i=1;i<temporada.length;i++) {
-            partido a = temporada[i].getGolesMarcados() > mejor.getGolesMarcados;
-            mejorPartido = a;
+        for (int i=1; i<temporada.length; i++) {
+            if(temporada[i].getGolesMarcados()> mejor.getGolesMarcados()){
+                mejor= temporada[i];
+            }
             
         }
-        return mejorPartido;
+        return mejor;
     }
 
     /**
@@ -100,13 +101,14 @@ public class ResultadosAtleti {
         // 2. Recorre el array desde el índice 1.
         // 3. Si temporada[i].getGolesMarcados() < peor.getGolesMarcados(), actualiza peor.
         // 4. Devuelve peor.
-        int peorPartido = temporada[0];
+         Partido peor = temporada[0];
 
         for(int i=1;i<temporada.length;i++){
-            partido b= temporada[i] < peor.getGolesMarcados();
-            peorPartido= b;
+           if(temporada[i].getGolesMarcados()< peor.getGolesMarcados()){
+            peor = temporada[i];
+           }
         }
-        return peorPartido;
+        return peor;
     }
 
     // ---------------------------------------------------------------------
@@ -119,12 +121,11 @@ public class ResultadosAtleti {
     public static int totalGolesMarcados(Partido[] temporada) {
         // TODO (opcional):
         // 1. Acumula getGolesMarcados() en un int y devuelve.
-        
-        int suma =0;
+        int suma = 0;
 
         for(int i=0;i<temporada.length;i++);
-        int total = getGolesMarcados();
-         suma += suma + total;
+        
+         suma += temporada[i].getGolesMarcados();
         return suma;
     }
 
@@ -137,8 +138,7 @@ public class ResultadosAtleti {
         int suma = 0;
 
         for (int i=0;i<temporada.length; i++) {
-            int total = getGolesRecibidos();
-            suma += suma + total;
+            suma += temporada[i].getGolesRecibidos();
             
         }
         return suma;
