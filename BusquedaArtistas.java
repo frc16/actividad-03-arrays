@@ -68,7 +68,14 @@ public class BusquedaArtistas {
         // TODO:
         // Devuelve true si indiceDe(cartel, nombreBuscado) es distinto de -1.
         // En caso contrario, false.
-        boolean nombre = true;
+        boolean existeArtista = false;
+
+        for(String artista: cartel){
+            if (artista.equals(nombreBuscado)) { 
+                existeArtista= true;
+                
+            }
+        }
 
         return false;
     }
@@ -88,6 +95,18 @@ public class BusquedaArtistas {
         // 2) Crea un nuevo int[] del tamaño contado.
         // 3) Recorre de nuevo y rellena ese array con los índices encontrados.
         // 4) Devuélvelo.
+            int i=0;
+        for (String artista: cartel) {
+
+            if(artista.equalsIgnoreCase(nombreBuscado)){
+
+              
+
+                
+
+            }
+        }
+                 
         return new int[0];
     }
 
