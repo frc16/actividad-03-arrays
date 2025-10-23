@@ -68,9 +68,8 @@ public class BusquedaArtistas {
         // TODO:
         // Devuelve true si indiceDe(cartel, nombreBuscado) es distinto de -1.
         // En caso contrario, false.
-        boolean nombre = true;
 
-        return false;
+        return indiceDe(cartel, nombreBuscado) !=-1;
     }
 
     /**
@@ -88,7 +87,22 @@ public class BusquedaArtistas {
         // 2) Crea un nuevo int[] del tamaño contado.
         // 3) Recorre de nuevo y rellena ese array con los índices encontrados.
         // 4) Devuélvelo.
-        return new int[0];
+
+        int t = 0;
+        for(int i=0; i < cartel.length; i++){
+            if(cartel[i].getNombre().equalsIgnoreCase(nombreBuscado)){
+                t++;
+            }
+        }
+        int[] indice = new int[t];
+        t = 0;
+        for(int i = 0;i<cartel.length; i++){
+             if(cartel[i].getNombre().equalsIgnoreCase(nombreBuscado)){
+            indice[t++] = i;
+             }
+        }
+
+        return indice;
     }
 
     /**
@@ -105,7 +119,22 @@ public class BusquedaArtistas {
         // Pista: compara Character.toLowerCase(inicial) con
         // Character.toLowerCase(cartel[i].getNombre().charAt(0)).
         // Haz el mismo patrón de "contar -> crear array -> rellenar -> devolver".
-        return new int[0];
+
+        int contador =0;
+        for(int i = 0; i<cartel.length;i++) {
+            if(cratel[i].getNombre().charAt('A')==inicial){
+                contador++;
+            }
+        }
+        int[] indices= new int[contador];
+        int j=0;
+        for( int i = 0; i<cartel.length; i++){
+            if(cartel[i].getNombre().charAt('A')==inicial){
+                indices[j++]=i;
+            }
+
+        }
+        return indices;
     }
 
     /**
@@ -124,6 +153,14 @@ public class BusquedaArtistas {
         // 3) Crea un int[] del tamaño contado.
         // 4) Segunda pasada: rellena el array con los índices que cumplen.
         // 5) Devuelve el array.
+          int a=0;
+          for(int i =0;i<cartel.length;i++){
+              if(cartel[i].getNombre().charAt.toLowerCase(0)==inicial && artista.getSeguidoresMiles >= minSeguidoresMiles && artista.getSeguidoresMiles <= maxSeguidoresMiles){
+                 indice[a++]=i;
+              }
+    
+          }
+
         return new int[0];
     }
 
@@ -137,6 +174,9 @@ public class BusquedaArtistas {
         // Recorre 'indices' y para cada 'idx' imprime:
         // System.out.println(" - [" + idx + "] " + cartel[idx]);
         // (No hagas bucles en main; hazlos aquí).
+        for(int i =0;i<cartel.length;i++){
+            System.out.println(cartel[indices[i]]);
+        }
     }
 
     // ------------------------------------------------------------
