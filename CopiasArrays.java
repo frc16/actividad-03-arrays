@@ -6,23 +6,27 @@ public class CopiasArrays {
     static String[] copiarManual(String[] origen) {
 
         String[] copia = new String[origen.length];
-      
-        for(int i=0; i<origen.length;i++);
 
-            copia[i]=origen[i]; //profe por alguna razon en mi laptop, marca en rojo la variable "i", si a usted tambien le marca, digame en que falle,gracias!
+        for (int i = 0; i < origen.length; i++){
 
+        copia[i] = origen[i]; // profe por alguna razon en mi laptop, marca en rojo la variable "i", si a
+                              // usted tambien le marca, digame en que falle,gracias!
+        }
         return copia;
-    }
-
-    /** Copia transformando: devuelve NUEVO array en MAYÚSCULAS (origen no se toca). */
+    
+   }
+    /**
+     * Copia transformando: devuelve NUEVO array en MAYÚSCULAS (origen no se toca).
+     */
     static String[] aMayusculas(String[] origen) {
 
-      String[] copia = new String[origen.length];
+        String[] copia = new String[origen.length];
 
-      for(int i=0; i<origen.length;i++);
+        for (int i = 0; i < origen.length; i++){
+            
 
-      copia[i]= origen[i].toUpperCase();
-        
+        copia[i] = origen[i].toUpperCase();
+        }
         return copia;
     }
 
@@ -33,11 +37,14 @@ public class CopiasArrays {
         return copia;
     }
 
-    /** Arrays.copyOf(array, tamaño): puede cambiar tamaño (recorta o rellena con null/0/false). */
+    /**
+     * Arrays.copyOf(array, tamaño): puede cambiar tamaño (recorta o rellena con
+     * null/0/false).
+     */
     static String[] copiarConCopyOf(String[] origen, int nuevoTam) {
 
         String[] copia = Arrays.copyOf(origen, nuevoTam);
-        
+
         return copia;
     }
 
@@ -45,11 +52,10 @@ public class CopiasArrays {
     static String[] subarray(String[] origen, int from, int to) {
         // Comprobar que from no puede ser menor que 0 y si lo es poner 0
         String[] copia = new String[origen.length];
-        
+
         from = Math.max(0, from);
-        to =  Math.min(origen.length, to);
-        if(from>0) from = to;
-        return Arrays.copyOfRange(origen,from,to);
+        to = Math.min(origen.length, to);
+        return Arrays.copyOfRange(origen, from, to);
     }
 
     static void assertArray(String msg, String[] esperado, String[] real) {
@@ -61,7 +67,7 @@ public class CopiasArrays {
     }
 
     public static void main(String[] args) {
-        String[] base = {"Intro","Sunrise","Neon","Chill"};
+        String[] base = { "Intro", "Sunrise", "Neon", "Chill" };
 
         System.out.println("Llamada: copiarManual(" + Arrays.toString(base) + ")");
         assertArray("copiarManual",
@@ -70,7 +76,7 @@ public class CopiasArrays {
 
         System.out.println("Llamada: aMayusculas(" + Arrays.toString(base) + ")");
         assertArray("aMayusculas",
-                new String[]{"INTRO","SUNRISE","NEON","CHILL"},
+                new String[] { "INTRO", "SUNRISE", "NEON", "CHILL" },
                 aMayusculas(base));
 
         System.out.println("Llamada: copiarConClone(" + Arrays.toString(base) + ")");
@@ -85,12 +91,12 @@ public class CopiasArrays {
 
         System.out.println("Llamada: copiarConCopyOf(" + Arrays.toString(base) + ", " + (base.length + 1) + ")");
         assertArray("copyOf ampliar con null",
-                new String[]{"Intro","Sunrise","Neon","Chill", null},
+                new String[] { "Intro", "Sunrise", "Neon", "Chill", null },
                 copiarConCopyOf(base, base.length + 1));
 
         System.out.println("Llamada: subarray(" + Arrays.toString(base) + ", 1, 3)");
         assertArray("copyOfRange(1,3)",
-                new String[]{"Sunrise","Neon"},
+                new String[] { "Sunrise", "Neon" },
                 subarray(base, 1, 3));
     }
 }
